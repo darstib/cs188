@@ -2,9 +2,13 @@
 
 > 中文 | [English](README_en.md)
 
+> [!warning]
+> 
+> 基于课程代码 license，撤去直接可运行代码，project 解释笔记保留，fork 仓库不予负责。
+
 ## 介绍
 
-这个仓库存放的是 UCB [CS 188 Spring 2024](https://inst.eecs.berkeley.edu/~cs188/sp24/) 的笔记&自学资料；理论上，你学习该课程所需要的全部资料都可以在这里及给出的外链中找到。
+[这个仓库](https://github.com/Darstib/cs188)存放的是 UCB [CS 188 Spring 2024](https://inst.eecs.berkeley.edu/~cs188/sp24/) 的笔记&自学资料；理论上，你学习该课程所需要的全部资料都可以在这里及给出的外链中找到，项目来自 [ai.berkeley.edu](http://ai.berkeley.edu).
 
 - 笔记：主体为原课程 notes[^1]，加入了自己的思考和排版，在[我的博客](https://darstib.github.io/blog/note/CS188/)上你可以阅读这些笔记；但为了更好的观感，建议使用 obsidian 查看，见使用-阅读。
 - 自学资料：由于 UCB 近年的部分课程开始需要 [CalNet Authentication Service](https://auth.berkeley.edu/cas/login?service=https%3a%2f%2finst.eecs.berkeley.edu%2f%7ecs188%2fsp23%2f)，为了便于之后的学习，将我认为自学需要的资料存档于[本仓库](https://github.com/Darstib/cs188)；由于不清楚如何申请转载权限，故若[本项目](https://github.com/Darstib/cs188)对[原课程](https://inst.eecs.berkeley.edu/~cs188/sp24/)及其相关项目产生不良影响，请[联系我](https://darstib.github.io/blog/connect_me/) 删除。
@@ -66,10 +70,21 @@
           - 原 project 源码；
     - intro_page
         - 保留的实验文档的页面文件。
-    - [solution](https://github.com/Darstib/cs188/tree/main/project/solution)
+    - ~~[solution](https://github.com/Darstib/cs188/tree/main/project/solution)~~
         - 参考代码（移动至 `cs188/project/solution/` 中）
 - [gradecode](https://www.gradescope.com/)
     - 4VK322。
+
+基于课程代码 license：
+
+```
+# Licensing Information:  You are free to use or extend these projects for
+# educational purposes provided that (1) you do not distribute or publish
+# solutions, (2) you retain this notice, and (3) you provide clear
+# attribution to UC Berkeley, including a link to http://ai.berkeley.edu.
+```
+
+撤去直接可运行代码，project 解释笔记保留，fork 仓库不予负责。
 
 ## 使用
 
