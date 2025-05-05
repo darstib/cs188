@@ -17,7 +17,7 @@
 
 ## 介绍
 
-[这个仓库](https://github.com/Darstib/cs188)存放的是 UCB [CS 188 Spring 2024](https://inst.eecs.berkeley.edu/~cs188/sp24/) 的笔记&自学资料；理论上，你学习该课程所需要的全部资料都可以在这里及给出的外链中找到，项目来自 [ai.berkeley.edu](http://ai.berkeley.edu).
+[这个仓库](https://github.com/Darstib/cs188)存放的是 UCB [CS 188 Spring 2024](https://inst.eecs.berkeley.edu/~cs188/sp24/) 的笔记&自学资料（已索引至 [Deepwiki](https://deepwiki.com/darstib/cs188)）；理论上，你学习该课程所需要的全部资料都可以在这里及给出的外链中找到，项目来自 [ai.berkeley.edu](http://ai.berkeley.edu).
 
 - 笔记：主体为原课程 notes[^1]，加入了自己的思考和排版，在[我的博客](https://darstib.github.io/blog/note/cs188/)上你可以阅读这些笔记；但为了更好的观感，建议使用 obsidian 查看，见使用-阅读。
 - 自学资料：由于 UCB 近年的部分课程开始需要 [CalNet Authentication Service](https://auth.berkeley.edu/cas/login?service=https%3a%2f%2finst.eecs.berkeley.edu%2f%7ecs188%2fsp23%2f)，为了便于之后的学习，将我认为自学需要的资料存档于[本仓库](https://github.com/darstib/cs188)；由于不清楚如何申请转载权限，故若[本项目](https://github.com/darstib/cs188)对[原课程](https://inst.eecs.berkeley.edu/~cs188/sp24/)及其[相关项目](http://ai.berkeley.edu)产生不良影响，请[联系我](https://darstib.github.io/blog/connect_me/) 删除。
