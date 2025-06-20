@@ -12,20 +12,20 @@ dg-publish: true
 
 Consider the following set of data:
 
-![](attachments/22-Neural_Networks.png)
+![|600](attachments/22-Neural_Networks.png)
 
 We would like to separate the two colors, and clearly there is no way this can be done in a single dimension (a single dimensional decision boundary would be a point, separating the axis into two regions). To fix this problem, we can add additional (potentially nonlinear) features to construct a decision boundary from. Consider the same dataset with the addition of $x^2$ as a feature:
 
-![](attachments/22-Neural_Networks-1.png)
+![|600](attachments/22-Neural_Networks-1.png)
 
 
 With this additional piece of information, we are now able to construct a linear separator in the two dimensional space containing the points. In this case, we were able to fix the problem by mapping our data to a higher dimensional space by manually adding useful features to data points. However, in many highdimensional problems, such as image classification, manually selecting features that are useful is a tedious problem. This requires domain-specific effort and expertise, and works against the goal of generalization across tasks. A natural desire is to learn these featurization or transformation functions as well, perhaps using a nonlinear function class that is capable of representing a wider variety of functions.
 
 ### Multi-layer Perceptron
 
-Consider the following setup, a two-layer perceptron, which is a perceptron that takes as input the outputs of another perceptron.
+Consider the following setup, a two-layer perceptron, which is a perceptron that takes as input the outputs of another perceptron.
 
-![](attachments/22-Neural_Networks-2.png)
+![|600](attachments/22-Neural_Networks-2.png)
 
 In fact, we can generalize this to an N-layer perceptron.
 
@@ -58,7 +58,7 @@ Multi-layer NN is much like the multi-layer perceptron, however, we choose a dif
 
 To efficiently calculate the gradients for each parameter in a neural network, we will use an algorithm known as backpropagation. Backpropagation represents the neural network as a dependency graph of operators and operands, called a computational graph, such as the one shown below for computing $(2+3)*4$ ($g=(x+y) \land f = g*z$):
 
-![](attachments/22-Neural_Networks-3.png)
+![|600](attachments/22-Neural_Networks-3.png)
 
 Recall the chain rule in calculus (for $f(x_{1}, x_{2}, \dots x_{n})$ where $x_{k}(t_{1}, t_{2}, \dots , t_{m})$):
 
@@ -75,3 +75,4 @@ Computation graphs are a great way to visualize repeated application of the chai
 ## link
 
 - [cs188-sp24-note22](https://inst.eecs.berkeley.edu/~cs188/sp24/assets/notes/cs188-sp24-note22.pdf)
+- [7-SVM](../../DMA/7-SVM.md)

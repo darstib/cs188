@@ -14,18 +14,13 @@ Because minimax believes it is responding to an optimal opponent, it’s often o
 
 Expectimax introduces **chance nodes** into the game tree, which instead of considering the worst case scenario as minimizer nodes do, considers the **average case**. More specifically, while minimizers simply compute the minimum utility over their children, chance nodes compute the expected utility or expected value.
 
-> [!NOTE]
+> [!note]+ **expectimax**
 >
 > Our rule for determining values of nodes with **expectimax** is as follows:[^1]
 > 
-> $$V(s) = 
-\begin{cases} 
-\max \limits_{s' \in \text{successors}(s)} V(s') & \text{if } s \text{ is an agent-controlled state} \\ 
-\sum \limits_{s' \in \text{successors}(s)} p(s'|s)V(s') & \text{if } s \text{ is a chance state} \\ 
-\text{\quad \quad known} & \text{if } s \text{ is a terminal state} 
-\end{cases}$$
+> $$V(s) = \begin{cases} \max \limits_{s' \in \text{successors}(s)} V(s') & \text{if } s \text{ is an agent-controlled state} \\ \sum \limits_{s' \in \text{successors}(s)} p(s'|s)V(s') & \text{if } s \text{ is a chance state} \\ \text{\quad \quad known} & \text{if } s \text{ is a terminal state} \end{cases}$$
 
-[^1]: In the below formulation, p(s′ |s) refers to either the probability that a given nondeterministic action results in moving from state s to s′ , or the probability that an opponent chooses an action that results in moving from state s to s′ , depending on the specifics of the game and the game tree under consideration.
+[^1]: In the below formulation, $p(s'|s)$ refers to either the probability that a given nondeterministic action results in moving from state s to s′ , or the probability that an opponent chooses an action that results in moving from state s to s′ , depending on the specifics of the game and the game tree under consideration.
 
 From this definition, we can see that <u>minimax is simply a special case of expectimax</u> . Minimizer nodes are simply chance nodes that assign a probability of 1 to their lowest-value child and probability 0 to all other children.
 
@@ -61,14 +56,13 @@ Not all games are zero-sum. Indeed, different agents may have have distinct task
 
 Such utilities, rather than being a single value that alternating agents try to minimize or maximize, are represented as tuples with different values within the tuple corresponding to unique utilities for different agents. <u>Each agent then attempts to maximize their own utility at each node they control, ignoring the utilities of other agents</u> .
 
-> [!EXAMPLE]
+> [!EXAMPLE]-
 >
 > ![](attachments/06_Expectimax-Monte-Carlo-Tree-Search-3.png)
 >
 >> [!HELP]
 >>
 >> 每层 agent 对应 utility tuples 中相同颜色的数字；在经过该层时，它们只考虑与他们有关的数字；对于 maximizer，既是取其最大者。
->> 
 
 ### Monte Carlo Tree Search
 
@@ -81,7 +75,7 @@ MCTS is based on two ideas:
 
 In the Go example, from a given state, we play until termination according to a policy multiple times. We record **the fraction of wins**, which correlates well with the value of the state[^2].
 
-> [!EXAMPLE]
+> [!EXAMPLE]-
 >
 > From the current state we have three different available actions (left, middle and right). We take each action 100 times and we record the percentage of wins for each one.
 >
@@ -101,13 +95,13 @@ In the Go example, from a given state, we play until termination according to a 
 
 [^2]: the value of the state 越大，在该决策下的模拟胜利可能性（即下图中的 x/y）也就越大。
 
-> [!INFO]
+> [!info]+ **UCB algorithm**
 >
 > The **UCB algorithm** captures this trade-off between “promising" and “uncertain’ actions by using the following criterion at each node n:[^3]
 >
 > [^3]: where N(n) denotes the total number of rollouts from node n and U(n) the total number of wins for Player(Parent(n)).
 >
->  $$UCB1(n)=\frac{U(n)}{N(n)}+C\times\sqrt{\frac{\log N(PARENT(n))}{N(n)}}$$
+> $$UCB1(n)=\frac{U(n)}{N(n)}+C\times\sqrt{\frac{\log N(PARENT(n))}{N(n)}}$$
 >
 > The first term captures how promising the node is, while the second captures how uncertain we are about that node’s utility. The user-specified parameter C balances the weight we put in the two terms (“exploration" and “exploitation") and depends on the application and perhaps the stage of the task (in later stages when we have accumulated many trials, we would probably explore less and exploit more).
 >
@@ -115,7 +109,7 @@ In the Go example, from a given state, we play until termination according to a 
 >>
 >> 我们暂时不必理解这个公式是如何计算以及为什么这么计算；明白这个算法帮助我们决定是要 "explore new moves (exploration) or use moves that have worked well in the past (exploitation)" 即可。
 >> 
->> > 在前期学习过程中，这些算法都是“函数”，我们只需要知道其“输入-功能-输出”就好了。
+>> 在前期学习过程中，这些算法都是“函数”，我们只需要知道其“输入-功能-输出”就好了。
 
 The **MCTS UCT algorithm** uses the UCB criterion in tree search problems. More specifically, it repeats the following three steps multiple times:
 
@@ -125,6 +119,8 @@ The **MCTS UCT algorithm** uses the UCB criterion in tree search problems. More 
 
 Once the above three steps are sufficiently repeated, we choose the action that leads to the child with the highest N. 
 
+> [!attention]+
+> 
 > Note that because UCT inherently explores more promising children a higher number of times, as N → ∞, UCT approaches the behavior of a minimax agent.
 
 ### Summary

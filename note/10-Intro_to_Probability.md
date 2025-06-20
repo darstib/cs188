@@ -30,13 +30,15 @@ $P(A|B)=\sum_{\omega\in A\cap B}P(\omega|B=\frac{P(A\cap B)}{P(B)}=\frac{P(B|A)P
 
 ### Inference By Enumeration (IBE)
 
-Given a joint PDF[^1], we can trivially compute any desired probability distribution P($Q_1...Q_m|e_1...e_n$) using a simple and intuitive procedure known as **inference by enumeration**, for which we define three types of variables we will be dealing with:
+Given a joint PDF[^1], we can trivially compute any desired probability distribution P($Q_1...Q_m|e_1...e_n$) using a simple and intuitive procedure known as **inference by enumeration**, for which we define three types of variables we will be dealing with [^2]:
 
 1. **Query variables** $Q_i$ , which are unknown and appear on the left side of the conditional bar(|) in the desired probability distribution.
 2. **Evidence variables** $e_{i}$ , which are observed variables whose values are known and appear on the right side of the conditional bar(|) in the desired probability distribution.
 3. **Hidden variables**, which are values present in the overall joint distribution but not in the desired distribution.
 
 [^1]: PDF指的是概率密度函数（Probability Density Function），用于描述连续随机变量在某个特定值附近的相对可能性。
+
+[^2]: 查询变量即未确定的变量；证据变量即我们已知的变量，也成为“被观察”的变量；隐（藏）变量是已经确定了，但是我们不能确定的变量。
 
 In **Inference By Enumeration**, we follow the following algorithm:
 

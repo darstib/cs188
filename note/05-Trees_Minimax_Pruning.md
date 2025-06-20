@@ -45,7 +45,7 @@ As opposed to normal search, which returned a comprehensive plan, adversarial se
 
 ### Minimax
 
-> [!DEFINITION]
+> [!definition]+ **Minimax**
 >
 > The first zero-sum-game algorithm we will consider is **minimax**, which runs under the motivating assumption that the opponent we face <u>behaves optimally, and will always perform the move that is worst for us</u> .
 
@@ -57,11 +57,16 @@ To introduce this algorithm, we must first formalize the notion of terminal util
 
 [^2]: We’ll formalize the concept of utility more concretely later, but for now it’s enough to simply think of an agent’s utility as its score or number of points it attains.
 
-> [!NOTE]
+> [!note]+
 >
 > Defining V(s) as the function defining the value of a state s, we can summarize the above discussion:
 > 
-> $$ V(s) = \begin{cases} \max\limits_{s' \in \text{successors}(s)} V(s'), & \text{if } s \text{ is a non-terminal state} \\ \text{\quad \quad known}, & \text{if } s \text{ is a terminal state} \end{cases} $$
+> $$ 
+> V(s) = \begin{cases}
+> \max\limits_{s' \in \text{successors}(s)} V(s'), & \text{if } s \text{ is a non-terminal state} \\
+> \text{\quad \quad known}, & \text{if } s \text{ is a terminal state}
+> \end{cases}
+> $$
 
 > [!EXAMPLE] Case 1
 >
@@ -106,11 +111,12 @@ Naturally, adding ghost-controlled nodes changes the move Pacman believes to be 
 > We can summarize the way minimax assigns values to states as follows:
 > 
 > $$V(s) = 
-\begin{cases} 
-\max \limits_{s' \in \text{successors}(s)} V(s') & \text{if } s \text{ is an agent-controlled state} \\ 
-\min \limits_{s' \in \text{successors}(s)} V(s') & \text{if } s \text{ is an opponent-controlled state} \\ 
-\text{\quad \quad known} & \text{if } s \text{ is a terminal state} 
-\end{cases}$$
+> \begin{cases} 
+> \max \limits_{s' \in \text{successors}(s)} V(s') & \text{if } s \text{ is an agent-controlled state} \\ 
+> \min \limits_{s' \in \text{successors}(s)} V(s') & \text{if } s \text{ is an opponent-controlled state} \\ 
+> \text{\quad \quad known} & \text{if } s \text{ is a terminal state} 
+> \end{cases}
+> $$
 
 In implementation, minimax behaves similarly to **depth-first search**, computing values of nodes in the same order as DFS would, starting with the the leftmost terminal node and iteratively working its way rightwards. More precisely, it performs a **postorder traversal** of the game tree. 
 
@@ -126,7 +132,7 @@ Minimax seems just about perfect - it’s simple, it’s optimal, and it’s int
 
 To help mitigate this issue, minimax has an optimization - **alpha-beta pruning**.
 
-> [!DEFINITION]
+> [!definition]+ $\alpha-\beta\quad pruning$ 
 >
 > Conceptually, **alpha-beta pruning** is this: if you’re trying to determine the value of a node n by looking at its successors, stop looking as soon as you know that n’s value can at best equal the optimal value of n’s parent.
 
@@ -148,9 +154,7 @@ Implementing such pruning can reduce our runtime to as good as $O(b^{m/2} )$, ef
 
 ![](attachments/05_Trees-Minimax-Pruning-8.png)
 
-> [!USELESS]
->
-> note05 让我们 "Take some time to compare this with the pseudocode for vanilla minimax"。
+> [!Extra]- note05 让我们 "Take some time to compare this with the pseudocode for vanilla minimax"。
 > 
 > 嗯？“香草”？还去搜了下 "vanilla minimax" 是什么……
 > 
@@ -176,7 +180,11 @@ Features are simply some element of a game state that we can extract and assign 
 >
 > In a game of checkers we might construct an evaluation function with 4 features: number of agent pawns, number of agent kings, number of opponent pawns, and number of opponent kings. We’d then select appropriate weights based loosely on their importance. In our checkers example, it makes most sense to select positive weights for our agent’s pawns/kings and negative weights for our opponents pawns/kings. Furthermore, we might decide that since kings are more valuable pieces in checkers than pawns, the features corresponding to our agent’s/opponent’s kings deserve weights with greater magnitude than the features concerning pawns. Below is a possible evaluation function that conforms to the features and weights we’ve just brainstormed:
 >
-> $Eval(s) = 2 · agent\_kings(s) +agent\_pawns(s)−2 · opponent\_kings(s)−opponent\_pawns(s)$
+> $$
+> \begin{align}
+> Eval(s) = 2 · agent\_kings(s) +agent\_pawns(s) \\
+> −2 · opponent\_kings(s)−opponent\_pawns(s)
+> \end{align}$$
 
 As you can tell, evaluation function design can be quite free-form, and don’t necessarily have to be linear functions either. For example nonlinear evaluation functions based on neural networks are very common in Reinforcement Learning applications. The most important thing to keep in mind is that the evaluation function yields higher scores for better positions as frequently as possible. This may require a lot of finetuning and experimenting on the performance of agents using evaluation functions with a multitude of different features and weights.
 

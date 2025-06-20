@@ -6,7 +6,7 @@ comments: true
 dg-publish: true
 ---
 
-> [!AI_SUMMARY]-
+> [!SUMMARY]-
 > 无序搜索算法在状态空间中探索解决方案，而不考虑启发式信息。
 >
 > - **状态空间：**所有可能状态的集合。
@@ -24,6 +24,8 @@ dg-publish: true
 
 ### State Spaces and Search Problems
 
+> [!note]+ 
+> 
 > In order to create a rational planning agent, we need a way to <u>mathematically express the given environment in which the agent will exist</u> . To do this, we must formally express a search problem - given our agent’s current state (its configuration within its environment),
 
 A search problem consists of the following elements: 
@@ -76,7 +78,7 @@ It’s important to note that <u>in a state space graph, each state is represent
 
 Though search trees are also a class of graph with states as nodes and actions as edges between states, <u>each state/node encodes not just the state itself, but the entire path (or plan) from the start state to the given state in the state space graph.</u> 
 
-![](attachments/02_Search-State-Spaces-Uninformed-Search-1.png)
+![state space graph & search tree](attachments/02_Search-State-Spaces-Uninformed-Search-1.png)
 
 Since there often exist multiple ways to get from one state to another, states tend to show up multiple times in search trees. As a result, search trees are greater than or equal to their corresponding state space graph in size.
 
@@ -110,15 +112,11 @@ function EXPAND(problem, node) yields nodes
     yield NODE(STATE=s′, PARENT=node, ACTION=action)
 ```
 
-> [!ATTENTION]
->
-> 原笔记中的 pseudocode 长下面这个样子：
+> [!extra]- 原笔记中的 pseudocode 长下面这个样子：
 > 
 > ![](attachments/02_State-Spaces-Uninformed-Search.png)
 > 
 > 实话说看着很不习惯，所以我会将其以类 python 的格式写下来
-
-> 很熟悉？确实，往下看。
 
 We’ll now cover three such strategies in succession: **depth-first search, breadth-first search, and uniform cost search.** Along with each strategy, some rudimentary properties of the strategy are presented as well, in terms of the following:
 
@@ -128,9 +126,18 @@ We’ll now cover three such strategies in succession: **depth-first search, bre
 - The **maximum depth** m. 
 - The **depth of the shallowest solution** s.
 
-> Depth-First Search & Breadth-First Search 比较常见，这里略过。
+> Depth-First Search & Breadth-First Search 应该是基础，这里略过。
 
-![|300](attachments/02_Search-State-Spaces-Uninformed-Search-3.png)![|300](attachments/02_Search-State-Spaces-Uninformed-Search-2.png)
+<div style="display:flex; text-align: center; justify-content: space-between;">
+    <div style="display: inline-block; width: 50%; margin: 0.5%;">
+        <img src="https://raw.githubusercontent.com/darstib/public_imgs/utool/2506/20_02_Search-State-Spaces-Uninformed-Search-3.png" alt="img1" style="width: 100%;">
+        <p>DFS</p>
+    </div>
+    <div style="display: inline-block; width: 50%; margin: 0.5%;">
+        <img src="https://raw.githubusercontent.com/darstib/public_imgs/utool/2506/20_02_Search-State-Spaces-Uninformed-Search-2.png" alt="img2" style="width: 100%;">
+        <p>BFS</p>
+    </div>
+</div>
 
 > [!INFO]
 >

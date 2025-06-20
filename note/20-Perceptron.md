@@ -23,11 +23,11 @@ $$
 \end{cases}
 $$
  
-![](attachments/20-Perceptron.png)
+![|600](attachments/20-Perceptron.png)
 
 We call this blue line the **decision boundary** because it is the boundary that separates the region where we classify data points as positive from the region of negatives. In higher dimensions, a linear decision boundary is generically called a **hyperplane**.
 
-![](attachments/20-Perceptron-1.png)
+![|600](attachments/20-Perceptron-1.png)
 
 $$
 \mathbf{h_{w+y^{*}f(x)}(x)= (w+y^{*}f(x))^T f(x)=h_{w}(x)+y^{*}f(x)^T f(x)}
@@ -39,7 +39,7 @@ where $\mathbf{f(x)^T f(x)}$ is a positive number, so the $\mathbf{h_{w}(x)}$ ch
 
 Any decision boundary that you end up drawing will be crossing the origin. Basically, our perceptron can only produce a decision boundary that could be represented by the function $\mathbf{w}^\top\mathbf{f}(\mathbf{x})=0,\mathbf{w},\mathbf{f}(\mathbf{x})\in\mathbb{R}^n$. We will modify our feature and weights to add a bias term $\mathbf{b}$.
 
-![](attachments/20-Perceptron-2.png)
+![|600](attachments/20-Perceptron-2.png)
 
 If $\mathbf{w'=w+\{1\}, f'(x)=f(x)+\{b\}}$, we also have: $\mathbf{w'^T f'(x)=0}$ .
 
@@ -49,8 +49,9 @@ For the multi-class case, we will have one weight vector for each class. In orde
 
 Instead of doing as many dot products as there are classes, we can instead do a single matrix-vector multiplication. This tends to be much more efficient in practice (because matrix-vector multiplication usually has a highly optimized implementation).
 
-![](attachments/20-Perceptron-3.png)
+![|600](attachments/20-Perceptron-3.png)
 
 ## link
 
-- [cs188-sp24-note0](https://inst.eecs.berkeley.edu/~cs188/sp24/assets/notes/cs188-sp24-note0.pdf) 
+- [cs188-sp24-note0](https://inst.eecs.berkeley.edu/~cs188/sp24/assets/notes/cs188-sp24-note0.pdf)
+- [2-Perceptron](../../DMA/2-Perceptron.md)

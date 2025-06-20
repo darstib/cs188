@@ -35,7 +35,7 @@ def get_sample():
     return [t, c]
 ```
 
-The downside of this approach is that it may require the generation of a very large number of samples in order to perform analysis of unlikely scenarios. If we wanted to compute P(C| −t), we’d have to throw away 99% of our samples.
+The downside of this approach is that it may require the generation of a very large number of samples in order to perform analysis of unlikely scenarios. If we wanted to compute $P(C|−t)$, we’d have to throw away 99% of our samples.
 
 ### Rejection Sampling
 
@@ -145,4 +145,5 @@ def gibbs_ask(X, e, bn, N):
 ## link
 
 - [cs188-sp24-note13](https://inst.eecs.berkeley.edu/~cs188/sp24/assets/notes/cs188-sp24-note13.pdf) 
+- [13-MCMC](../../DMA/13-MCMC.md)
 - [A Gentle Introduction to Bayesian Deep Learning](https://towardsdatascience.com/a-gentle-introduction-to-bayesian-deep-learning-d298c7243fd6)

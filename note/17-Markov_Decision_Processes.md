@@ -26,13 +26,13 @@ A Markov Decision Process is defined by several properties:
 
 Consider the motivating example of a racecar:
 
-![](attachments/17-Markov_Decision_Processes.png)
+![|600](attachments/17-Markov_Decision_Processes.png)
 
 - S = {cool, warm, overheated}
 - A = {slow, fast}
-- ![](attachments/17-Markov_Decision_Processes-1.png)
+- Function: ![|600](attachments/17-Markov_Decision_Processes-1.png)
 
-![](attachments/17-Markov_Decision_Processes-2.png)
+![|600](attachments/17-Markov_Decision_Processes-2.png)
 
 ### Finite Horizons and Discount factors
 
@@ -58,4 +58,5 @@ where $U^*(s)=\max_aQ^*(s,a)$ (namly the bellman equation - the optimal value of
 
 ## link
 
-- [cs188-sp24-note17](https://inst.eecs.berkeley.edu/~cs188/sp24/assets/notes/cs188-sp24-note17.pdf) 
+- [cs188-sp24-note17](https://inst.eecs.berkeley.edu/~cs188/sp24/assets/notes/cs188-sp24-note17.pdf)
+- [13-MCMC](../../DMA/13-MCMC.md)

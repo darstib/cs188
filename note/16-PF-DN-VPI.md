@@ -36,6 +36,7 @@ Rational agents must follow the principle of maximum utility - they must always 
 >- A lottery is a situation with different prizes resulting with different probabilities. To denote lottery where A is received with probability p and B is received with probability (1− p), we write $L = [p, A; (1-p), B]$.
 
 In order for a set of preferences to be rational, they must follow the five **Axioms of Rationality**:
+
 - Orderability: $(A\succ B)\lor(B\succ A)\lor(A\sim B)$
 - Transitivity: $(A\succ B)\land(B\succ C)\Rightarrow(A\succ C)$
 - Continuity: $A\succ B\succ C\Rightarrow\exists p, \left[p,A;(1-p),C\right]\sim B$
@@ -79,12 +80,13 @@ $$
 \begin{cases}
 MEU(e)=\max_a\sum_sP(s|e)U(s,a) \\
 MEU(e,e^{\prime})=\max_a\sum_sP(s|e,e^{\prime})U(s,a)
-\end{cases} \implies VPI(e^{\prime}|e)=MEU(e,e^{\prime})-MEU(e)
+\end{cases} \Rightarrow VPI(e^{\prime}|e)=MEU(e,e^{\prime})-MEU(e)
 $$
 
 However, note that we don’t know what new evidence we’ll get, we use E' to represent e', so $MEU(e,E^{\prime})=\sum_{e^{\prime}}P(e^{\prime}|e)MEU(e,e^{\prime})$ and $\boxed{VPI(E^{\prime}|e)=MEU(e,E^{\prime})-MEU(e)}$.
 
 Properties of VPI:
+
 - Nonnegativity - $\forall E^{\prime},e\text{ VPI}(E^{\prime}|e)\geq0$
 - Nonadditivity - $VPI(E_j,E_k|e)\neq VPI(E_j|e)+VPI(E_k|e)$ in general.
 - Order-independence - $VPI(E_j,E_k|e)=VPI(E_j|e)+VPI(E_k|e_j)=VPI(E_k|e)+VPI(E_j|e,E_k)$

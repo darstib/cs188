@@ -7,10 +7,15 @@ dg-publish: true
 ---
 
 ## note
+
+> [!summary] 逻辑谓词基础，熟知可跳过。
+
 ### A Knowledge Based Agent
 
 Imagine a dangerous world filled with lava, the only respite a far away oasis. We would like our agent to be able to safely navigate from its current position to the oasis.
 
+> [!extra]- 
+> 
 > In reinforcement learning, we assume that the only guidance we can give is a reward function which will try to nudge the agent in the right direction, like a game of ’hot or cold’. 
 > 
 > However, we might consider an alternative strategy, instead.
@@ -33,11 +38,11 @@ This alternative type of agent is known as a **knowledge based agent**. Such an 
 
 [^1]: **CNF** is a conjunction of **clauses**, each of which a disjunction of literals. It has the general form (P1 ∨ ··· ∨Pi)∧ ··· ∧ (Pj ∨··· ∨Pn), i.e. it is an **‘AND’ of ‘OR’s**.
 
-![|650](attachments/07-Propositional_Logic_and_Planning.png)
+![|600](attachments/07-Propositional_Logic_and_Planning.png)
 
-![](attachments/07-Propositional_Logic_and_Planning-1.png)
+![|600](attachments/07-Propositional_Logic_and_Planning-1.png)
 
-![](attachments/07-Propositional_Logic_and_Planning-2.png)
+![|600](attachments/07-Propositional_Logic_and_Planning-2.png)
 ## link
 
 - [cs188-sp24-note07](https://inst.eecs.berkeley.edu/~cs188/sp24/assets/notes/cs188-sp24-note07.pdf)

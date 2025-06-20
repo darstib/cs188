@@ -4,26 +4,33 @@
 
 > [!warning]
 > 
-> 基于课程代码 License：
->
-> ```
+> 基于课程代码 license：
+> 
+> ```py
 > # Licensing Information:  You are free to use or extend these projects for
 > # educational purposes provided that (1) you do not distribute or publish
 > # solutions, (2) you retain this notice, and (3) you provide clear
 > # attribution to UC Berkeley, including a link to http://ai.berkeley.edu.
 > ```
->
+> 
 > 撤去直接可运行代码，project 解释笔记保留，fork 仓库不予负责。
 
 ## 介绍
 
-[这个仓库](https://github.com/Darstib/cs188)存放的是 UCB [CS 188 Spring 2024](https://inst.eecs.berkeley.edu/~cs188/sp24/) 的笔记&自学资料（已索引至 [Deepwiki](https://deepwiki.com/darstib/cs188)）；理论上，你学习该课程所需要的全部资料都可以在这里及给出的外链中找到，项目来自 [ai.berkeley.edu](http://ai.berkeley.edu).
+[这个仓库](https://github.com/Darstib/cs188)存放的是 UCB [CS 188 Spring 2024](https://inst.eecs.berkeley.edu/~cs188/sp24/) 的笔记&自学资料；理论上，你学习该课程所需要的全部资料都可以在这里及给出的外链中找到，项目来自 [ai.berkeley.edu](http://ai.berkeley.edu).
 
-- 笔记：主体为原课程 notes[^1]，加入了自己的思考和排版，在[我的博客](https://darstib.github.io/blog/note/cs188/)上你可以阅读这些笔记；但为了更好的观感，建议使用 obsidian 查看，见使用-阅读。
-- 自学资料：由于 UCB 近年的部分课程开始需要 [CalNet Authentication Service](https://auth.berkeley.edu/cas/login?service=https%3a%2f%2finst.eecs.berkeley.edu%2f%7ecs188%2fsp23%2f)，为了便于之后的学习，将我认为自学需要的资料存档于[本仓库](https://github.com/darstib/cs188)；由于不清楚如何申请转载权限，故若[本项目](https://github.com/darstib/cs188)对[原课程](https://inst.eecs.berkeley.edu/~cs188/sp24/)及其[相关项目](http://ai.berkeley.edu)产生不良影响，请[联系我](https://darstib.github.io/blog/connect_me/) 删除。
+- 笔记：主体为原课程 notes[^1]，加入了自己的思考和排版，在[我的博客](https://darstib.github.io/blog/note/CS188/)上你可以阅读这些笔记；~~但为了更好的观感，建议使用 obsidian 查看~~[^2]，见使用-阅读。
+- 自学资料：由于 UCB 近年的部分课程开始需要 [CalNet Authentication Service](https://auth.berkeley.edu/cas/login?service=https%3a%2f%2finst.eecs.berkeley.edu%2f%7ecs188%2fsp23%2f)，为了便于之后的学习，将我认为自学需要的资料存档于[本仓库](https://github.com/Darstib/cs188)；由于不清楚如何申请转载权限，故若[本项目](https://github.com/Darstib/cs188)对[原课程](https://inst.eecs.berkeley.edu/~cs188/sp24/)及其相关项目产生不良影响，请[联系我](https://darstib.github.io/blog/connect_me/) 删除。
 - 如果对[搜索算法](https://oi-wiki.org/search/)了然于心、对 ML/DL/RL 知识较为熟悉且希望接触一些小的项目文件，大可直接做 project。
 
 [^1]: 其一，我不能确保我的翻译正确性；其二，网页/obsidian 阅读已经能够借助很多插件辅组阅读，可参考[读 / 写文章](https://darstib.github.io/blog/collection/Tools/#i4)；其三，本人精力有限，恕不能完全打造一个 CS188 全中文阅读环境。
+
+[^2]: 【20250319】更，现在通过插件转换已经使得 mkdocs 与 obsidian 能够直接衔接，直接阅读在线网站即可。
+
+- 【20250619 更】本学期刚好选了一门统计机器学习的课程，感觉更加理解了之前学 cs188 时一知半解的东西，在 prerequisite 中添加了对应的链接（下面是一些介绍，与 cs188 没有直接联系；现在看来，cs188 更多像一个 toy，不过也是很符合课程名称的）
+	- 一方面来自 [AI 算法工程师手册]()，是一个涉及面更加全、完整的中文资料；
+	- 另一方面来自 [Data modeling and analysis](https://darstib.github.io/blog/note/DMA/ )，是我学习学校《数据建模与分析》课程时，借助 gemini 2.5 处理 ppt 后，自己边学边调整的笔记，我觉得讲的还是挺清晰的（在学这门课之前我的数理统计能力近乎高中水平）；
+	- 同时部分难点参听了[王木头学科学](https://space.bilibili.com/504715181)，细致好理解，可惜 up 很久没更了。
 
 ## 目录
 
@@ -81,8 +88,9 @@
         - 保留的实验文档的页面文件。
     - ~~[solution](https://github.com/Darstib/cs188/tree/main/project/solution)~~
         - ~~参考代码（移动至 `cs188/project/solution/` 中）~~
+        - 基于课程代码 license，撤去直接可运行代码
 - [gradecode](https://www.gradescope.com/)
-    - 4VK322。
+    - `4VK322`
 
 ## 使用
 
@@ -91,7 +99,7 @@
 #### 使用 git
 
 ```shell
-git clone https://github.com/Darstib/cs188.git
+git clone https://github.com/darstib/cs188.git
 ```
 
 #### 直接全部下载

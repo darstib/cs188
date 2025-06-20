@@ -13,12 +13,12 @@ In the previous note, solving Markov decision processes is an example of **offli
 In online planning, an agent must try **exploration**, during which it performs actions and receives feedback in the form of the successor states it arrives in and the corresponding rewards it reaps. The agent uses this feedback to estimate an optimal policy through a process known as **reinforcement learning** before using this estimated policy for exploitation or reward maximization.
 
 There are two types of reinforcement learning, model-based learning and model-free learning. 
-- Modelbased learning attempts to estimate the transition and reward functions with the samples attained during exploration before using these estimates to solve the MDP normally with value or policy iteration. 
-- Modelfree learning, on the other hand, attempts to estimate the values or Q-values of states directly, without ever using any memory to construct a model of the rewards and transitions in the MDP.
+- Model based learning attempts to estimate the transition and reward functions with the samples attained during exploration before using these estimates to solve the MDP normally with value or policy iteration. 
+- Model free learning, on the other hand, attempts to estimate the values or Q-values of states directly, without ever using any memory to construct a model of the rewards and transitions in the MDP.
 
 > 内容很紧，原 note 没有啥可以省略的，建议直接看原文，下面是很好的总结：
 
-![](attachments/24-Reinforcement_Learnin.png)
+![|600](attachments/24-Reinforcement_Learnin.png)
 
 ## link
 

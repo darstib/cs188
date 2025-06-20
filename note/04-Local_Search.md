@@ -10,11 +10,11 @@ dg-publish: true
 
 ### Local Search
 
-> In the previous note, we wanted to find the goal state, along with the optimal path to get there. But in some problems, we <u>only care about finding the goal state</u>  — reconstructing the path can be trivial.
+In the previous note, we wanted to find the goal state, along with the optimal path to get there. But in some problems, we <u>only care about finding the goal state</u>  — reconstructing the path can be trivial.
 
 Local search algorithms allow us to find goal states without worrying about the path to get there.
 
-![](attachments/04_Local-Search.png)
+![Local search concept map](attachments/04_Local-Search.png)
 
 The figure above shows the one dimensional plot of an objective function on the state space. For that function we wish to find the state that corresponds to the highest objective value. <u>The basic idea of local search algorithms is that from each state they locally move towards states that have a higher objective value until a maximum (hopefully the global) is reached. </u> 
 
@@ -22,7 +22,7 @@ We will be covering four such algorithms, **hill-climbing, simulated annealing, 
 
 ### Hill-Climbing Search
 
-> [!DEFINITION]
+> [!definition]+ **hill-climbing search**
 >
 > The **hill-climbing search** algorithm (or _steepest-ascent_) moves from the current state towards the neighboring state that increases the objective value the most.
 
@@ -108,11 +108,11 @@ function REPRODUCE(x, y) returns an individual
     return APPEND(SUBSTRING(x, 1, c), SUBSTRING(y, c + 1, n))
 ```
 
-> 上图中映照伪代码，向我们展示了遗传算法是如何“传宗接代”的；需要注意的是，在 (b) 中有两列数字，第一列表示其 FITNESS，第二列表示其选中为“父代”的概率，这个概率与 FITNESS 线性相关。
-
 > [!EXAMPLE] 8-Queens problem
 >
 > ![](attachments/04_Local-Search-1.png)
+> 
+> 上图中映照伪代码，向我们展示了遗传算法是如何“传宗接代”的；需要注意的是，在 (b) 中有两列数字，第一列表示其 FITNESS，第二列表示其选中为“父代”的概率，这个概率与 FITNESS 线性相关。
 
 ![](attachments/04_Local-Search-2.png)
 

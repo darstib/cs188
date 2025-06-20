@@ -41,6 +41,8 @@ Noting that $B^{\prime}(W_{i+1})=P(W_{i+1}|f_1,\ldots,f_i)=\sum_{w_i}P(W_{i+1}|w
 
 After some derivation (see original note), we get: $B(W_{i+1})\propto P(f_{i+1}|W_{i+1})B^{\prime}(W_{i+1})$ , so we get $B(W_{i+1}) \sim B(W_{i})$.
 
+> [!extra]- 
+> 
 > 根据原笔记，我认为应当是：$\boxed{B(W_{i+1}) =  \frac{P(f_{i+1}|W_{i+1})\sum_{{w_{i}}}P(W_{i+1}|w_{i})B(w_{i})}{P(f_{i+1}|f_{1:i})}}$ ，这就是 hidden marko model's forward algorithm.
 
 ### Viterbi Algorithm
@@ -67,7 +69,10 @@ $$
 \begin{aligned}m_t[x_t]&=\max_{x_{1:t-1}}P(e_t|x_t)P(x_t|x_{t-1})P(x_{1:t-1},e_{1:t-1})\\&=P(e_t|x_t)\max_{x_{t-1}}P(x_t|x_{t-1})\max_{x_{1:t-2}}P(x_{1:t-1},e_{1:t-1})\\&=P(e_t|x_t)\max_{x_{t-1}}P(x_t|x_{t-1})m_{t-1}[x_{t-1}].\end{aligned}
 $$
 
-Using $a_t[x_t]=P(e_t|x_t)\arg\max_{x_{t-1}}P(x_t|x_{t-1})m_{t-1}[x_{t-1}]=\arg\max_{x_{t-1}}P(x_t|x_{t-1})m_{t-1}[x_{t-1}]$to keep track of the last transition, the pseudo-code is as follows:
+Using 
+
+$$a_t[x_t]=P(e_t|x_t)\arg\max_{x_{t-1}}P(x_t|x_{t-1})m_{t-1}[x_{t-1}]=\arg\max_{x_{t-1}}P(x_t|x_{t-1})m_{t-1}[x_{t-1}]$$
+to keep track of the last transition, the pseudo-code is as follows:
 
 ![](attachments/15-Hidden_Marko_Models-2.png)
 

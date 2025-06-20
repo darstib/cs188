@@ -14,7 +14,7 @@ If IBE used, each of n variables we wish to represent can take on d possible val
 
 Bayes nets avoid this issue by taking advantage of the idea of conditional probability.
 
-> [!DEFINITION] Bayes Net
+> [!definition]+ Bayes Net
 >
 > We formally define a Bayes Net as consisting of:
 > ![](attachments/11-Bayesian_Network_Intro.png)
@@ -37,3 +37,4 @@ Two rules for Bayes Net independences
 ## link
 
 - [cs188-sp24-note11](https://inst.eecs.berkeley.edu/~cs188/sp24/assets/notes/cs188-sp24-note11.pdf) 
+- [4-Naive_Bayes](../../DMA/4-Naive_Bayes.md)

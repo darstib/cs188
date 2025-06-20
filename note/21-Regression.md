@@ -40,7 +40,7 @@ $$
 
 In complicated cases, we can use **gradient-based methods** to find the optimal weights, as shown below ($\alpha$ stands for learning rate).
 
-![](attachments/21-Regression.png)
+![|600](attachments/21-Regression.png)
  
 If our dataset has a large number of n data points then computing the gradient as above in each iteration of the gradient descent algorithm might be too computationally intensive. As such, approaches like stochastic and batch gradient descent have been proposed.
 
@@ -92,3 +92,4 @@ where we used the fact that $\sum_{k}{t_{i,k}}=1$.
 ## link
 
 - [cs188-sp24-note21](https://inst.eecs.berkeley.edu/~cs188/sp24/assets/notes/cs188-sp24-note21.pdf)
+- [6-logistic](../../DMA/6-logistic.md)

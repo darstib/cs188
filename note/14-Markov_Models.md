@@ -49,4 +49,5 @@ As expected, $P(W_{\infty+1}) = P(W_{\infty})$. In general, if $W_{t}$ had a dom
 
 ## link
 
-- [cs188-sp24-note14](https://inst.eecs.berkeley.edu/~cs188/sp24/assets/notes/cs188-sp24-note14.pdf) 
+- [cs188-sp24-note14](https://inst.eecs.berkeley.edu/~cs188/sp24/assets/notes/cs188-sp24-note14.pdf)
+- [13-MCMC](../../DMA/13-MCMC.md)

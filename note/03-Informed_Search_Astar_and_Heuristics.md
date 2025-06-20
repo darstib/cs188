@@ -8,10 +8,11 @@ dg-publish: true
 
 > [!PREREQUISITE]
 >
-> -  [范数](https://www.wikiwand.com/zh/articles/%E8%8C%83%E6%95%B0)
-> - [序关系](https://darstib.github.io/blog/note/cs70/note/18-Misc/#_5)
+> - [范数](https://www.wikiwand.com/zh/articles/%E8%8C%83%E6%95%B0)
+> - [序关系](https://kg.darstib.cn/note/cs70/18-Misc/#%E5%BA%8F%E5%85%B3%E7%B3%BB)
 
 ## note
+
 ### Informed Search
 
 _Uniform cost search_ is good because it’s both complete and optimal, but it can be **fairly slow** because it expands in every direction from the start state while searching for a goal. If we <u>have some notion of the direction in which we should focus our search</u> , we can significantly improve performance and "hone in" on a goal **much more quickly**. This is exactly the focus of _informed search_.
@@ -20,6 +21,8 @@ _Uniform cost search_ is good because it’s both complete and optimal, but it c
 
 Heuristics are the driving force that allow estimation of distance to goal states - they’re functions that <u>take in a state as input and output a corresponding estimate</u>.
 
+> [!note]+ 
+> 
 > The computation performed by such a function is **specific to the search problem** being solved. For reasons that we’ll see in A* search, below.
 
 we usually want heuristic functions to <u>be a lower bound on this remaining distance to the goal</u> , and so heuristics are typically solutions to **relaxed problems** (where some of the constraints of the original problem have been removed).
@@ -52,9 +55,7 @@ This concept of preference is very powerful, and is utilized by the following tw
 
 Now, let’s spend some time discussing what constitutes a good heuristic. 
 
-> [!QUESTION]
->
-> Why?
+> [!question]+ Why?
 > 
 > Let’s first reformulate the methods used for determining priority queue ordering in UCS, greedy search, and A* with the following definitions:
 >
@@ -64,11 +65,11 @@ Now, let’s spend some time discussing what constitutes a good heuristic.
 >
 > Indeed, it’s very easy to find heuristics that break these two coveted properties. As an example, consider the heuristic function **h(n) = 1−g(n).** Such a heuristic reduces A* search to BFS.
 
-> [!DEFINITION ]
+> [!definition]+ **admissibility**
 >
-> The condition required for optimality when using A* tree search is known as **admissibility**. The admissibility constraint states that the value estimated by an admissible heuristic is neither negative nor an overestimate, that is: $∀n, 0 ≤ h(n) ≤ h^∗ (n)$, ($h^∗(n)$ is the true optimal forward cost to reach a goal state from a given node n).
+> The condition required for optimality when using A\* tree search is known as **admissibility**. The admissibility constraint states that the value estimated by an admissible heuristic is neither negative nor an overestimate, that is: $∀n, 0 ≤ h(n) ≤ h^∗ (n)$, ($h^∗(n)$ is the true optimal forward cost to reach a goal state from a given node n).
 
-> [!THEOREM]
+> [!THEOREM]+
 >
 > For a given search problem, if the admissibility constraint is satisfied by a heuristic function h, using A* tree search with h on that search problem will yield an optimal solution.
 > 
@@ -95,7 +96,7 @@ function GRAPH-SEARCH(problem, frontier) return a solution or failure
     return failure
 ```
 
-> [!EXAMPLE] Bad example
+> [!EXAMPLE]- Bad example
 >
 > However, just consider the following simple state space graph and corresponding search tree, annotated with weights and heuristic values:
 >
@@ -103,11 +104,11 @@ function GRAPH-SEARCH(problem, frontier) return a solution or failure
 > 
 > In the above example, it’s clear that the optimal route is to follow S → A →C → G, yielding a total path cost of 1+1+3 = 5. The only other path to the goal, S → B →C → G has a path cost of 1+2+3 = 6. However, because the heuristic value of node A is so much larger than the heuristic value of node B, node C is first expanded along the second, suboptimal path as a child of node B. It’s then placed into the "reached" set, and so A* graph search fails to reexpand it when it visits it as a child of A, so **it never finds the optimal solution.** Hence, <u>to maintain optimality under A* graph search, we need an even stronger property than admissibility</u>. 
 
-> [!DEFINITION ]
+> [!definition]- consistency
 >
 > **consistency.** The central idea of consistency is that we enforce not only that a heuristic underestimates the total distance to a goal from any given node, but also the cost/weight of each edge in the graph. The cost of an edge as measured by the heuristic function is simply the difference in heuristic values for two connected nodes. Mathematically, the consistency constraint can be expressed as follows: $∀A,C\quad h(A)−h(C) ≤ cost(A,C)$
 
-> [!THEOREM]
+> [!theorem]+
 >
 > For a given search problem, if the consistency constraint is satisfied by a heuristic function h, using A* graph search with h on that search problem will yield an optimal solution.
 >
@@ -117,7 +118,7 @@ A couple of important highlights from the discussion above before we proceed: fo
 
 Additionally, <u>Additionally, consistency is not just a stronger constraint than admissibility, consistency implies admissibility. This stems simply from the fact that if no edge costs are overestimates (as guaranteed by consistency), the total estimated cost from any node to a goal will also fail to be an overestimate</u>. This stems simply from the fact that if no edge costs are overestimates (as guaranteed by consistency), the total estimated cost from any node to a goal will also fail to be an overestimate.
 
-> [!HELP]
+> [!HELP]-
 >
 > 简单来说，**admissible** 要求 heuristic function 即 h(n) 低估到达目标的 cost，而 **consitency** 要求 h(n) 低估任意两个 state 之间的 cost 差。在 consitency 中 $h(A)−h(C) ≤ cost(A,C)$，那么对于任意一条 path，将有 $h(A) - h(G)= \sum (h(A)−h(C)) \leq \sum cost(A, C) = h^*(A)$，而 h(G)=0，故 admissible 条件也满足了。
 > 
@@ -129,18 +130,18 @@ Additionally, <u>Additionally, consistency is not just a stronger constraint tha
 
 The standard metric for this(creating "good" heuristics, and how to tell if one heuristic is better than another) is that of **dominance**. If heuristic a is dominant over heuristic b, then the estimated goal distance for a is greater than the estimated goal distance for b for every node in the state space graph. Mathematically, $∀n : h_{a}(n) ≥ h_{b}(n)$ .
 
-> [!INFO]
+> [!info]+
 >
 > Additionally, the **trivial heuristic is defined as h(n) = 0**, and using it reduces A* search to UCS. All admissible heuristics dominate the trivial heuristic. The trivial heuristic is often incorporated at the base of a **semi-lattice** for a search problem, a dominance hierarchy of which it is located at the bottom.
 > 
->> [!HELP]
+>> [!help]-
 >>
 >> 关键是理解这个 semi-lattice，用序关系来理解就很不错，下面的例子也很好地帮助我们理解。
 > 
 > Below is an example of a semi-lattice that incorporates various heuristics ha,hb, and hc ranging from the trivial heuristic at the bottom to the exact goal distance at the top:
 >
 > ![](attachments/03_State-Spaces-Uninformed-Search-6.png)
-
+> 
 > 很显然，在 dominance 的度量标准下，所有满足我们先前要求的 heuristics 都“不大于” exact  即正确的情况，那么“越大”的 heuristics 越接近于 exact，自然是我们越想要的。
 
 ### Search: Summary

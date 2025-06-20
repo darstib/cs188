@@ -27,7 +27,9 @@ When convergence is reached, the Bellman equation will hold for every state: $\f
 
 ### Q-value Iteration
 
-Q-value iteration is a dynamic programming algorithm that computes time-limited Q-values. It is described in the following equation: $Q_{k+1}(s,a)\leftarrow\sum_{s^{\prime}}T(s,a,s^{\prime})[R(s,a,s^{\prime})+\gamma\max_{a^{\prime}}Q_k(s^{\prime},a^{\prime})]$.
+Q-value iteration is a dynamic programming algorithm that computes time-limited Q-values. It is described in the following equation: 
+
+$$Q_{k+1}(s,a)\leftarrow\sum_{s^{\prime}}T(s,a,s^{\prime})[R(s,a,s^{\prime})+\gamma\max_{a^{\prime}}Q_k(s^{\prime},a^{\prime})]$$
 
 ### Policy Iteration
 
@@ -54,7 +56,7 @@ $$\boldsymbol{\pi}_{i+1}(s)=\underset a{\operatorname*{argmax}}\sum_{s^{\prime}}
 
 ### summary
 
-![](attachments/18-Iteration.png)
+![|600](attachments/18-Iteration.png)
 
 ## link
 

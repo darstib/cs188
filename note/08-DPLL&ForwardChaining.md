@@ -20,7 +20,7 @@ For a propositional logical system, if there are N symbols, there are $2^N$ mode
 
 [^1]: [**First-order logic**](https://www.wikiwand.com/en/articles/First-order_logic) —also called **predicate logic**, **predicate calculus**, **quantificational logic**. Propositional Logic 处理简单命题及其连接；而 Predicate Logic 处理带有量词和变量的命题，那么需要考虑的情况变得无比地多；我们将在下一篇笔记详解讲解。
 
-> [!INFO]
+> [!extra]+
 >
 > In fact the problem of propositional entailment is known to be co-NP-complete. While the worst case runtime will inevitably be an exponential function of the size of the problem, there are algorithms that can in practice terminate much more quickly. We will discuss two model checking algorithms for propositional logic.
 
